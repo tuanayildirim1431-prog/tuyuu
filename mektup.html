@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="wiweport" content="width=device-width. initial-scale=1.0">
+        <title>Tuana'ya Mektup Yolla!</title>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+
+     html{margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background: url('arkaplan2.jpg') no-repeat center center fixed;
+        background-size: cover;}
+      
+      body{ font-family: 'Plus Jakarta Sans' , sans-serif;
+            line-height: 1.8;
+            color: #4a5759; 
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            box-sizing: border-box; }
+
+    html, body, *, *::after, *::before, a, button, img, div, p, h1, h2, li, span, textarea, input {
+                cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M0,0 L0,22 L6,16 L13,23 L16,20 L9,13 L16,13 Z' fill='%23e5989b' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E"), auto !important;
+            }
+   .baslik-kutusu {
+            background-color: #fcfaf2; 
+            border-radius: 24px; 
+            padding: 25px;
+            margin: 15px auto;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 10px 30px rgba(74, 87, 89, 0.10); 
+            text-align: center;
+            box-sizing: border-box;}
+
+
+    .mektup-kutusu{background-color: #fcfaf2; 
+            border-radius: 24px; 
+            padding: 40px 30px;
+            margin: 30px auto;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 10px 30px rgba(74, 87, 89, 0.15); 
+            text-align: center;
+            box-sizing: border-box;}
+
+
+    h1 {color: #b56576; 
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 5px;}
+    p{
+            color: #6d597a;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+    .from-grup{
+            background-color: #fff0f3; 
+            border-radius: 24px;
+            padding: 25px 30px;
+            margin: 20px auto; 
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 10px 25px rgba(181, 101, 118, 0.1); 
+            text-align: left;
+            box-sizing: border-box;
+            transition: transform 0.3s ease;
+        }
+   .form-grup:hover {
+            transform: translateY(-3px); }
+
+
+    label {
+            display: block;
+            font-weight: 600;
+            color: #b56576;
+            margin-bottom: 8px;
+            font-size: 14px;}
+
+    input[type="text"], textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #f4ece1;
+            border-radius: 12px;
+            background-color: #fff0f3;
+            font-family: inherit;
+            color: #4a5759;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            outline: none;}
+
+    input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+            border-color: #e5989b;
+            box-shadow: 0 0 8px rgba(229, 152, 155, 0.3);}
+
+  
+
+    input[type="text"]:focus, textarea:focus {
+            border-color: #e5989b;
+            box-shadow: 0 0 8px rgba(229, 152, 155, 0.2);}
+    div{background-color: #fcfaf2; 
+        border-radius: 24px; 
+        padding: 30px;
+        margin: 15px auto;
+        width: 100%;
+        max-width: 450px;
+        box-shadow: 0 10px 30px rgba(74, 87, 89, 0.15); 
+        text-align: center;
+        box-sizing: border-box;
+        transition: transform 0.3s ease;}
+
+
+    div:hover{transform: translateY(-4px)}
+   
+    .cta {
+        position: relative;
+        margin: auto;
+        padding: 12px 18px;
+        transition: all 0.2s ease;
+        border: none;
+        background: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%; 
+        box-sizing: border-box;
+        }
+
+    .cta:before {
+        content: "";
+        position: absolute;
+        top: 4px; 
+        left: 10px;
+        display: block;
+        border-radius: 50px;
+        background: #e5989b; 
+        width: 45px;
+        height: 45px;
+        transition: all 0.3s ease;
+        }
+
+    .cta span {
+        position: relative;
+        font-family: 'Plus Jakarta Sans', sans-serif; 
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: #b56576; 
+        }
+
+    .cta svg {
+        position: relative;
+        top: 0;
+        margin-left: 10px;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke: #b56576;
+        stroke-width: 2;
+        transform: translateX(-5px);
+        transition: all 0.3s ease;
+        }
+
+    .cta:hover:before {
+        width: 95%; 
+        background: #e5989b;
+        }
+
+    .cta:hover svg {
+        transform: translateX(0); 
+        }
+
+    .cta:active {
+        transform: scale(0.95); 
+        }
+   
+
+    
+
+
+
+
+
+    </style>
+
+    <body>
+
+        <div class="baslik-kutusu">
+            
+            <h1>Bana Yaz</h1>
+            <p>İçinden geçenleri bırak, kimse görmicek...</p>
+        </div>
+            
+            <form id="mektupForm">
+            
+        
+            <div class="from-grup">
+                <label for="isim">Adın</label>
+                <input type="text" id="isim" placeholder="Kim olduğunu bilmeli miyim?">
+
+            </div>
+
+
+            <div class="form-grup">
+                <label for="mesaj">Mektubun:</label>
+                <textarea name="mesaj" id="mesaj" rows="5" placeholder="Bana söylemek istediğin şey nedir..." required></textarea>
+            </div>
+
+            <div class="btn-grup">
+                  <button id="submitBtn" class="cta">
+                        <span>Gönder</span>
+                        <svg width="15px" height="10px" viewBox="0 0 13 10">
+                            <path d="M1,5 L11,5"></path>
+                            <polyline points="8 1 12 5 8 9"></polyline>
+                        </svg>
+                    </button>
+                <a href="index.html" class="geri-btn">↩ Ana Sayfaya Dön</a>
+            </div>
+        </from>
+    </div>
+
+
+
+    <script type="module">
+
+     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+     import {getDatabase,ref,push} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-database.js";
+
+
+
+        const firebaseConfig = { apiKey: "AIzaSyB7tml-kni6Mi450wn14bfCJ9_7wSpxYzM",
+            authDomain: "mektup-4e6e3.firebaseapp.com",
+            databaseURL: "https://mektup-4e6e3-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "mektup-4e6e3",
+            storageBucket: "mektup-4e6e3.firebasestorage.app",
+            messagingSenderId: "880431683929",
+            appId: "1:880431683929:web:5b032b15258f9f2c7cd448",
+            measurementId: "G-D1WMRJ9FG6"};
+
+
+
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+
+        document.getElementById('submitBtn').addEventListener('click', function(event) {
+            event.preventDefault();
+            const isim = document.getElementById('isim').value;
+            const mektup = document.getElementById('mesaj').value;
+            if(isim === "" || mektup === "") {
+                alert("Aşkım kutuları boş bırakma lütfen 🧸");
+                return;}
+
+
+            push(ref(database, "mektuplar"), {
+                gonderenAd: isim,
+                gonderilenMektup: mektup,
+                tarih: new Date().toLocaleString("tr-TR") })
+
+            
+            .then(() => {
+
+                alert("Mektubun uçtu! 🤍");
+                  document.getElementById("isim").value = "";
+                  document.getElementById("mesaj").value = ""; })
+
+            .catch((error) => {
+
+                alert("Hata oluştu: " + error.message)
+            ;})
+        
+        ;});
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

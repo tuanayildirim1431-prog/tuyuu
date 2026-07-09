@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>Tuana'nın Portfolyosu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+    html {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh; 
+        background-color: #a3b18a; 
+        position: relative;}
+
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        line-height: 1.8;
+        color: #4a5759; 
+        margin: 0;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        box-sizing: border-box;
+    }
+
+    html, body, *, *::after, *::before, a, button, img, div, p, h1, h2, li, span {
+        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M0,0 L0,22 L6,16 L13,23 L16,20 L9,13 L16,13 Z' fill='%23e5989b' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E"), auto !important;
+    }
+
+  
+    div {
+        background-color: #fcfaf2; 
+        border-radius: 24px; 
+        padding: 30px;
+        margin: 15px auto;
+        width: 100%;
+        max-width: 450px;
+        box-shadow: 0 10px 30px rgba(74, 87, 89, 0.15); 
+        text-align: center;
+        box-sizing: border-box;
+        transition: transform 0.3s ease;
+    }
+
+    div:hover {
+        transform: translateY(-4px); 
+    }
+
+    /* 3. Profil Fotoğrafı Tasarımı */
+    img {
+        border-radius: 50%; 
+        border: 6px solid #fcfaf2; 
+        box-shadow: 0 10px 30px rgba(163, 177, 138, 0.4);
+        transition: all 0.4s ease;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+    
+    img:hover {
+        transform: scale(1.08) rotate(3deg); 
+        box-shadow: 0 15px 35px rgba(163, 177, 138, 0.6);
+    }
+
+  
+    h1 {
+        color: #b56576;
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 10px; 
+    }
+
+    h2 {
+        color: #e5989b; 
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: 0;
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    ul li {
+        background-color: #f4ece1; 
+        margin: 8px 0;
+        padding: 10px;
+        border-radius: 12px;
+        font-weight: 600;
+        color: #b56576;
+    }
+
+    /* 5. Buton Tasarımları */
+    /* Spotify Butonu */
+    .spotify-btn {
+        display: inline-block;
+        background-color: #1DB954; 
+        color: white;
+        text-decoration: none;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        margin-top: 10px;
+        box-shadow: 0 8px 20px rgba(29, 185, 84, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .spotify-btn:hover {
+        transform: scale(1.05);
+        background-color: #1ed760;
+    }
+
+    /* Sosyal Medya Buton Alanı */
+    .sosyal-butonlar {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .sosyal-btn {
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+    
+    .instagram-btn {
+        background-color: #b56576;
+        box-shadow: 0 6px 15px rgba(181, 101, 118, 0.3);
+    }
+
+   
+    .tiktok-btn {
+        background-color: #6d597a;
+        box-shadow: 0 6px 15px rgba(109, 89, 122, 0.3);
+    }
+
+    .sosyal-btn:hover {
+        transform: scale(1.08) translateY(-2px);
+        filter: brightness(1.1);
+    }
+
+
+    .mektup-btn {
+        display: inline-block;
+        background-color: #e5989b;
+        color: white;
+        text-decoration: none;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        margin-top: 10px;
+        box-shadow: 0 8px 20px rgba(229, 152, 155, 0.3);
+        transition: all 0.3s ease;}
+
+
+
+    .mektup-btn:hover {
+        transform: scale(1.05);
+        background-color: #b56576;}
+
+
+
+     @keyframes parilda {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }}
+
+    
+
+
+</style>
+
+</head>
+
+<div class="ozel-imlec"></div>
+
+<body>
+
+<img src="ben.jpeg" width="160" height="160" alt="ben">
+
+<div>
+    <h1>Merhaba, benim adım Tuana.</h1>
+    <p>Bu benim ilk web sitem ve çok heycanlıyım inş güzel olur.</p>
+</div>
+
+
+<div>
+     <h2>Hakkımda</h2>
+     <p>Ben Tuana. Yazılım öğrenmeye çalışıyorum o yüzden böyle bri web sitesi denemek istedim. Şu an iyi gidiyor gibiyim ama bakalım</p>
+</div>
+
+
+<div>
+    <h2>Hobilerim</h2>
+    <ul>
+        <li>Resim çizmek</li>
+        <li>Müzik dinlemek</li>
+    </ul>
+</div>
+
+
+
+<div>
+    <h2>Hedeflerim</h2>
+    <p>Şu anki hedefim şu web sitesini güzel bir şekilde tasarlamak</p>
+</div>
+
+
+
+ <div> <h2>Bana mektup yolla!</h2>
+
+    <p>Bana söylemek istediğin, içinden geçen şeyleri söyleyebilirsin.</p>
+    <a href="mektup.html" class="btn-ortak mektup-btn">Mektup Yaz</a>
+</div>
+
+
+
+<div>
+    <h2>Beni Takip Et ☁️</h2>
+    <p>Sosyal medya hesaplarıma göz atmak istersen:</p>
+     <a href="http://googleusercontent.com/spotify.com/5" target="_blank" class="btn-ortak spotify-btn">Spotify</a>
+     <a href="https://www.instagram.com/tuanayldrmi/" target="_blank" class="btn-ortak sosyal-btn instagram-btn">İnstagram</a>
+
+</div>
+
+
+
+</body>
+</html>
