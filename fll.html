@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fal</title>
+        
+
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh; 
+            background: radial-gradient(circle at center, #1b1b2f 0%, #161224 50%, #0b0914 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #e0e0e0;}
+
+
+        #acilis-ekrani{position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #0b0914; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; 
+            transition: opacity 1s ease, visibility 1s;}
+
+        .acilis-yazisi{color: #f39c12;
+            font-size: 22px;
+            margin-top: 20px;
+            letter-spacing: 2px;
+            animation: yaziParlama 1.5s infinite alternate;}
+
+        .mistik-kure{font-size: 80px;
+            animation: kureDalgalanma 2s infinite ease-in-out;}
+
+        @keyframes kureDalgalanma {0% { transform: translateY(0) scale(1); opacity: 0.8; }
+            50% { transform: translateY(-20px) scale(1.1); opacity: 1; text-shadow: 0 0 20px #f39c12; }
+            100% { transform: translateY(0) scale(1); opacity: 0.8; }}
+
+        @keyframes yaziParlama {
+            0% { opacity: 0.5; text-shadow: 0 0 5px rgba(243, 156, 18, 0.5); }
+            100% { opacity: 1; text-shadow: 0 0 15px rgba(243, 156, 18, 1); } }
+
+        h1 {color: #f39c12; 
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px rgba(243, 156, 18, 0.4);
+            letter-spacing: 2px;}
+
+
+        p{color: #b19cd9;
+            font-size: 15px;
+            margin-bottom: 20px; }
+
+        .giris-kutusu{background: rgba(26, 26, 46, 0.85); 
+            border: 1px solid rgba(243, 156, 18, 0.3);
+            border-radius: 20px; 
+            padding: 30px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 350px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); 
+            text-align: center;
+            box-sizing: border-box;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        
+        
+        .giris-kutusu:hover{transform: translateY(-4px) ; box-shadow: 0 20px 40px rgba(243, 156, 18, 0.2);}
+
+        #sonuc-ekrani {display: none;}
+
+        .kart_kutusu{display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+        max-width: 650px; margin: 30px auto;}
+
+       .kart {width: 65px;
+                    height: 105px;
+                    background: linear-gradient(135deg, #2c1654 0%, #4b134f 50%, #1a0b2e 100%); 
+                    border: 2px solid #f39c12; 
+                    border-radius: 10px;
+                    cursor: pointer;
+                    position: relative;
+                    overflow: hidden;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+                    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);}
+
+
+        .kart::after{content: "🔮";position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            opacity: 0.7;
+            transition: transform 0.3s;}
+        .kart:hover{transform: translateY(-12px) scale(1.05);border-color: #ffd700;
+            box-shadow: 0 10px 25px rgba(243, 156, 18, 0.5); }
+
+        .kart:hover::after {
+            transform: translate(-50%, -50%) rotate(15deg) scale(1.2);
+        }
+
+        .container {
+                border: 1px solid #ffd700;
+                padding: 30px;
+                width: 80%;
+                max-width: 400px;
+                margin: 50px auto;
+                border-radius: 10px;
+                background-color: rgba(0, 0, 0, 0.6);}
+
+        .container h2, .container p {
+            color: white; 
+        }
+                
+                
+        button {
+                background-color: #ffd700;
+                color: #000;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                font-weight: bold;
+                border-radius: 5px;
+                margin-top: 20px;
+            }
+
+        .dön{ --glow-color: rgb(217, 176, 255);
+            --glow-spread-color: rgba(191, 123, 255, 0.781);
+            --enhanced-glow-color: rgb(231, 206, 255);
+            --btn-color: rgb(100, 61, 136);
+            border: .25em solid var(--glow-color);
+            padding: 1em 3em;
+            color: var(--glow-color);
+            font-size: 15px;
+            font-weight: bold;
+            background-color: var(--btn-color);
+            border-radius: 1em;
+            outline: none;
+            box-shadow: 0 0 1em .25em var(--glow-color),
+                    0 0 4em 1em var(--glow-spread-color),
+                    inset 0 0 .75em .25em var(--glow-color);
+            text-shadow: 0 0 .5em var(--glow-color);
+            position: relative;
+            transition: all 0.3s;}
+
+        .dön::after {
+            pointer-events: none;
+            content: "";
+            position: absolute;
+            top: 120%;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: var(--glow-spread-color);
+            filter: blur(2em);
+            opacity: .7;
+            transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+            }
+
+        .dön:hover {
+            color: var(--btn-color);
+            background-color: var(--glow-color);
+            box-shadow: 0 0 1em .25em var(--glow-color),
+                    0 0 4em 2em var(--glow-spread-color),
+                    inset 0 0 .75em .25em var(--glow-color);
+            }
+
+        .dön:active {
+            box-shadow: 0 0 0.6em .25em var(--glow-color),
+                    0 0 2.5em 2em var(--glow-spread-color),
+                    inset 0 0 .5em .25em var(--glow-color);
+            }
+       #anasayfa-butonu { text-align: center; margin-top: 30px; margin-bottom: 40px;}
+            
+    </style>
+</head>
+
+<body>
+
+
+<div id="acilis-ekrani">
+    <div class="mistik-kure">🔮</div>
+    <h2 class="acilis-yazisi">Yükleniyor...</h2>
+</div>
+
+
+
+
+
+<div id="giris-ekrani">
+    <div class="giris-kutusu">
+        <h1>Falsal</h1>
+        <p>Küçük bir fal oyununa var mısın?</p>
+
+    </div>
+
+    <div class="giris-kutusu"  style="max-width: 650px;">
+        <p>Falına bakmak için kartlardan birine dokun.</p>
+        <div id="kart-alani" class="kart_kutusu">
+        </div>
+    </div>
+</div>
+
+<div id="anasayfa-butonu">
+    <a href="index.html" class="dön">Anasayfa</a>
+
+</div>
+
+
+
+<div id="sonuc-ekrani" class="container">
+    <p id="fal_sonucu"></p>
+    <button onclick="basadon()">Geri Dön</button>
+</div>
+
+
+<audio id="sihirSesi" src="fal.mp3">
+</audio>
+
+<script>
+
+
+    window.onload = function(){ 
+        setTimeout(function(){
+            let acilis = document.getElementById("acilis-ekrani");
+            acilis.style.opacity = "0";
+            setTimeout(function(){acilis.style.visibility = "hidden";}, 1000);},3000)};
+
+
+
+
+
+
+
+
+    const fallar= [
+            "Joker: Yepyeni bir başlangıç seni bekliyor. Cesur ol ve risk almaktan korkma.",
+            "Büyücü: Hedeflerine ulaşmak için ihtiyacın olan yetenek ve güç senin içinde.",
+            "Azize: İç sesini dinle, sezgilerin sana doğru yolu gösterecek.",
+            "İmparatoriçe: Bolluk, bereket ve sevgi dolu bir döneme giriyorsun.",
+            "İmparator: Hayatında düzen ve disiplin kurmanın, otoriteni göstermenin vakti geldi.",
+            "Aziz: Geleneksel yollardan ilerlemek ve tecrübeli birinden tavsiye almak sana iyi gelecek.",
+            "Aşıklar: Kalbinle ilgili önemli bir seçim yapman gerekebilir, kalbinin sesini dinle.",
+            "Savaş Arabası: Karşına çıkan engelleri hızla aşıp büyük bir zafere ulaşacaksın.",
+            "Güç: İçindeki cesareti ve sabrı ortaya çıkarma zamanı. Zorlukları nezaketle aşacaksın.",
+            "Ermiş: Biraz yalnız kalıp kendi içine dönmek ve dinlenmek sana çok iyi gelecek.",
+            "Kader Çarkı: Şans senden yana dönüyor! Hayatında beklenmedik ama güzel sürprizlere hazır ol.",
+            "Adalet: Yaptığın iyiliklerin karşılığını hak ettiğin şekilde, en adil biçimde alacaksın.",
+            "Asılan Adam: Olaylara farklı bir açıdan bakman ve bazı şeyleri akışına bırakman gerekiyor.",
+            "Ölüm: Bir devir kapanıyor, yepyeni bir sayfa açılıyor. Bu değişimden korkma.",
+            "Denge: Hayatındaki aşırılıkları törpüleyip, iç huzuru ve dengeyi bulmalısın.",
+            "Şeytan: Seni kısıtlayan düşüncelerden veya toksik alışkanlıklardan kurtulma zamanı geldi.",
+            "Yıkılan Kule: Beklenmedik ve sarsıcı bir değişim yaşayabilirsin ama sonu senin için aydınlık olacak.",
+            "Yıldız: Umutların yeşeriyor! Çok güzel bir ilham ve iyileşme dönemindesin.",
+            "Ay: Kafanı karıştıran bazı belirsizlikler ve sırlar var, adım atarken dikkatli olmalısın.",
+            "Güneş: Mutluluk, başarı ve neşe kapıda! Her şey harika ve aydınlık gidiyor.",
+            "Mahkeme: Geçmişteki çabalarının ve emeklerinin büyük ödülünü almak üzeresin.",
+            "Dünya: Hedefine ulaştın! Bütünlük hissediyorsun, şimdi bu güzel başarının tadını çıkar."
+            ];
+
+    const kart_alani = document.getElementById("kart-alani");
+
+   
+
+
+
+    for (let i = 0; i <  22;  i++){
+        let yenikart= document.createElement("div");
+        yenikart.className ="kart";
+        yenikart.onclick= function(){
+            kartSec(i);};
+        kart_alani.appendChild(yenikart);
+    }
+
+
+    const sihirSesi = document.getElementById("sihirSesi");
+
+
+    function kartSec(kartNumarasi){
+        sihirSesi.currentTime = 0;
+        sihirSesi.volume = 0.17;
+        sihirSesi.play().catch(function(hata){console.log("ses çalışmıyorrrrr", hata);});
+        
+        setTimeout(function(){
+            let secilenFal= fallar[kartNumarasi];
+            document.getElementById("fal_sonucu").innerHTML = secilenFal;
+            document.getElementById("giris-ekrani").style.display ="none";
+            document.getElementById("sonuc-ekrani").style.display = "block";
+            document.getElementById("anasayfa-butonu").style.display = "none";}, 1500)}
+
+
+    function basadon(){
+        document.getElementById("sonuc-ekrani").style.display ="none";
+        document.getElementById("giris-ekrani").style.display = "block";
+        document.getElementById("anasayfa-butonu").style.display = "block"; }
+        
+    
+        
+ </script>
+
+
+
+
+</body>
+</html>
